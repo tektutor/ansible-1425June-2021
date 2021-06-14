@@ -85,6 +85,7 @@ docker start ubuntu1
 ### Docker rename container
 ```
 docker rename old-container-name new-container-name
+```
 
 ### Restarting a container
 ```
