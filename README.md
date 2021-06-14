@@ -66,6 +66,17 @@ docker ps
 docker ps -a
 ```
 
+### Listing containers with a specific name pattern
+```
+docker ps --filter="name=ubuntu"
+docker ps --filter="name=ubu"
+```
+
+### Deleting containers matching  a spectific name pattern
+```
+docker rm -f $(docker ps -q --filter="name=ubuntu") 
+```
+
 ### Finding IP Address of a container
 ```
 docker inspect ubuntu1 | grep IPA
