@@ -44,6 +44,11 @@ docker image inspect ubuntu:16.04
 
 ## Managing Docker Containers
 
+### Creating a container in background(deattchaed/daemon) mode
+```
+docker run --dit --name ubutu2 --hostname ubuntu2 ubuntu:16.04 /bin/bash
+```
+
 ### Creating a container in interactive mode
 ```
 docker run hello-world:latest
@@ -54,6 +59,7 @@ docker run --it --name ubuntu1 --hostname ubuntu1 ubuntu:16.04 /bin/bash
 ```
 docker ps
 ```
+
 
 ### Listing all containers
 ```
