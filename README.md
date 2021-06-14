@@ -1,4 +1,5 @@
 ## Setting the Lab environment
+The assumption is that you already have a CentOS 8.3.x 64-bit OS.
 
 ### Installing Docker Community Edition
 ```
@@ -13,4 +14,6 @@ sudo yum install docker-ce
 ```
 sudo systemctl enable docker
 sudo systemctl start docker
+sudo usermod -aG docker jegan
 ```
+You may have to replace the user 'jegan' with your username.
