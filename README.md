@@ -82,6 +82,10 @@ docker stop ubuntu1
 docker start ubuntu1
 ```
 
+### Docker rename container
+```
+docker rename old-container-name new-container-name
+
 ### Restarting a container
 ```
 docker restart ubuntu1
@@ -95,4 +99,19 @@ docker exec -it ubuntu1 /bin/bash
 ### Coming out of container
 ```
 exit
+```
+
+### Deleting a container graciously
+```
+docker stop ubuntu1
+docker rm ubuntu1
+docker stop ubuntu2 && docker rm ubuntu2
+docker stop ubuntu1 ubuntu2 ubuntu3
+docker rm ubuntu1 ubuntu2 ubuntu3
+```
+
+### Deleting a container forcibly
+```
+docker rm -f ubuntu1
+docker rm -f $(docker ps -aq)
 ```
