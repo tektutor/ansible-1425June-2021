@@ -34,6 +34,12 @@ docker pull ubuntu:16.04
 ### Deleting a docker image
 ```
 docker rmi hello-world:latest
+
+```
+
+### Finding more details about the image
+```
+docker image inspect ubuntu:16.04
 ```
 
 ## Managing Docker Containers
@@ -73,4 +79,14 @@ docker start ubuntu1
 ### Restarting a container
 ```
 docker restart ubuntu1
+```
+
+### Getting inside a running container
+```
+docker exec -it ubuntu1 /bin/bash
+```
+
+### Coming out of container
+```
+exit
 ```
