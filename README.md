@@ -122,9 +122,12 @@ exit
 ```
 docker stop ubuntu1
 docker rm ubuntu1
+
 docker stop ubuntu2 && docker rm ubuntu2
+
 docker stop ubuntu1 ubuntu2 ubuntu3
 docker rm ubuntu1 ubuntu2 ubuntu3
+
 docker stop $(docker ps -q) && docker rm $(docker ps -aq)
 ```
 
