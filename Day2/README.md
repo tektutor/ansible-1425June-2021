@@ -74,6 +74,10 @@ docker rm -f $(docker ps -aq)
 docker network ls
 ```
 
+### Docker default network
+Docker uses 'docker0' bridge network as the default network.  If a container is created and not connected to a custom-network, they 
+are by default connected to 'docker0' bridge network.  The 'docker0' is a software defined bridge network.  The subnet IP address assigned to this network is 172.17.0.0/16.  Technically, 65535 containers can be part of this network. However, some IP addresses are reserved for docker's internal use, for example 172.17.0.1 is used for GateWay.  It is through the Gateway containers will be able to communicate to outside world or internet.
+
 ### Create ubuntu1 and ubuntu2 containers
 ```
 docker run -dit --name ubuntu1 --hostname ubuntu1 ubuntu:16.04 /bin/bash
