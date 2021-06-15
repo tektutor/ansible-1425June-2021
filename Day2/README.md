@@ -19,6 +19,7 @@ docker run -d --name mysql1 --hostname mysql1 -v /tmp/mysql:/var/lib/mysql -e MY
 ```
 
 ## Wordpress with MySQL
+This demonstrates how a multi-container application is deployed in docker.
 
 ### Cleanup existing containers
 ```
