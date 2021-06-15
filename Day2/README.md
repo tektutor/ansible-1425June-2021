@@ -63,3 +63,63 @@ The assumption is 172.17.0.2 is the IP Address of wordpress1 container.
 ```
 http://172.17.0.2:80
 ```
+
+### Clean up all containers
+```
+docker rm -f $(docker ps -aq)
+```
+
+### List the docker networks
+```
+docker network ls
+```
+
+### Create ubuntu1 and ubuntu2 containers
+```
+docker run -dit --name ubuntu1 --hostname ubuntu1 ubuntu:16.04 /bin/bash
+docker run -dit --name ubuntu2 --hostname ubuntu2 ubuntu:16.04 /bin/bash
+```
+
+### Inspect container ubuntu1
+```
+docker inspect ubuntu1 | grep IPA
+```
+You may notice that the IP Address of ubuntu1 is 172.17.0.2 
+
+### Inspect container ubuntu2
+```
+docker inspect ubuntu1 | grep IPA
+```
+YOu may notice that the IP Address of ubuntu2 is 172.17.0.3
+
+### Inspect bridge network
+```
+docker network inspect bridge
+```
+You can observe now that ubuntu1 and ubuntu2 are added to default 'bridge' network and acquired an IP from the bridge network subnet (172.17.0.0/16).
+
+### Containers from same network can access each other by default
+
+### Connect to ubuntu1 
+```
+docker exec -it ubuntu1 bash
+apt update && apt install -y iputils-ping net-tools
+```
+
+### From another tab connect to ubuntu2
+```
+docker exec -it ubuntu2 bash
+apt update && apt install -y iputils-ping net-tools
+```
+
+### Try pinging ubuntu2 from ubuntu1 container
+```
+ping 172.17.0.3
+```
+You would have observed practically that ubuntu1 is able to reach to ubuntu2. The reason is they are in the same network.
+
+### Try pinging ubuntu1 from ubuntu2 container
+```
+ping 172.17.0.2
+```
+You would have observed practically that ubuntu2 is able to reach to ubuntu1.  The reason is they are in the same network.
