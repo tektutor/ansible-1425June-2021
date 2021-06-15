@@ -127,3 +127,43 @@ You would have observed practically that ubuntu1 is able to reach to ubuntu2. Th
 ping 172.17.0.2
 ```
 You would have observed practically that ubuntu2 is able to reach to ubuntu1.  The reason is they are in the same network.
+
+### Remove existing containers
+```
+docker rm -f $(docker ps -aq)
+```
+
+### Create your custom network
+```
+docker network create my-network-1
+docker network create my-network-2
+```
+
+### Inspect the Subnet address assigned to my-network-1
+```
+docker network inspect my-network-1
+```
+You would have noticed that my-network-1 is assigned with 172.18.0.0/16 subnet address.
+
+### Inspect the Subnet address assigned to my-network-2
+```
+docker network inspect my-network-2
+```
+You would have noticed that my-network-2 is assigned with 172.19.0.0/16 subnet address.
+
+
+### You could also create a custom network with a custom subnet address
+```
+docker network create test-network --subnet 192.168.0.0/16
+```
+
+### You may inspect test-network to verify the subnet IP address range
+```
+docker network inspect test-network
+```
+You would noticed that test-network is assinged with a custom subnet ip range 192.168.0.0/16.  Assumption is 192.168.0.0/16 is not already taken by other networks on your system.
+
+### Deleting a custom network
+```
+docker network rm test-network
+```
