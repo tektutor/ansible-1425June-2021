@@ -49,13 +49,13 @@ Assuming the mysql1 container IP address is 172.17.0.3
 
 ### Create the wordpress
 ```
-docker run --name some-wordpress -e WORDPRESS_DB_HOST=172.17.0.3:3306 \
+docker run --name wordpress1 -e WORDPRESS_DB_HOST=172.17.0.3:3306 \
     -e WORDPRESS_DB_USER=root -e WORDPRESS_DB_PASSWORD=root -d wordpress
 ```
 
 ### Find the IP Address of the wordpress1 container
 ```
-docker inspect wordpress | grep IPA
+docker inspect wordpress1 | grep IPA
 ```
 
 ### Access the wordpress web page from Lab machine web browser
