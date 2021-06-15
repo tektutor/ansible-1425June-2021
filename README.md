@@ -55,6 +55,11 @@ docker run hello-world:latest
 docker run --it --name ubuntu1 --hostname ubuntu1 ubuntu:16.04 /bin/bash
 ```
 
+### Coming out of the interactive container without exiting the container
+```
+Ctrl + p + q
+```
+
 ### Listing the currenly running containers
 ```
 docker ps
