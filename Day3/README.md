@@ -119,3 +119,13 @@ Connection to localhost closed.
 [jegan@localhost centos-ansible]$ 
 </pre>
 
+
+#### Create a static inventory file with name 'hosts'
+vim hosts
+```
+[all]
+ubuntu1 ansible_port=2001 ansible_user=root ansible_host=localhost ansible_private_key_file=/home/jegan/.ssh/id_rsa
+ubuntu2 ansible_port=2002 ansible_user=root ansible_host=localhost ansible_private_key_file=/home/jegan/.ssh/id_rsa
+centos1 ansible_port=2003 ansible_user=root ansible_host=localhost ansible_private_key_file=/home/jegan/.ssh/id_rsa
+centos2 ansible_port=2004 ansible_user=root ansible_host=localhost ansible_private_key_file=/home/jegan/.ssh/id_rsa
+```
