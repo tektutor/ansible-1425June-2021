@@ -37,3 +37,21 @@ docker build -t tektutor/ansible-node-centos .
 docker images
 ```
 If the image was successfuly build, you will see an image with name "tektutor/ansible-node-centos:latest"
+
+#### Clean up existing containers
+```
+docker rm -f $(docker ps -aq)
+```
+
+#### Create container from the custom docker images
+```
+docker run -d --name ubuntu1 --hostname ubuntu1 -p 2001:22 -p 8001:80 tektutor/ansible-node-ubuntu:latest
+docker run -d --name ubuntu2 --hostname ubuntu2 -p 2002:22 -p 8002:80 tektutor/ansible-node-ubuntu:latest
+docker run -d --name centos1 --hostname centos1 -p 2003:22 -p 8003:80 tektutor/ansible-node-centos:latest
+docker run -d --name centos2 --hostname centos2 -p 2004:22 -p 8004:80 tektutor/ansible-node-centos:latest
+```
+
+#### Check if all the 4 containers are running
+```
+docker ps
+```
