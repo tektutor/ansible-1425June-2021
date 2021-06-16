@@ -47,6 +47,7 @@ docker rm -f $(docker ps -aq)
 ```
 docker run -d --name ubuntu1 --hostname ubuntu1 -p 2001:22 -p 8001:80 tektutor/ansible-node-ubuntu:latest
 docker run -d --name ubuntu2 --hostname ubuntu2 -p 2002:22 -p 8002:80 tektutor/ansible-node-ubuntu:latest
+
 docker run -d --name centos1 --hostname centos1 -p 2003:22 -p 8003:80 tektutor/ansible-node-centos:latest
 docker run -d --name centos2 --hostname centos2 -p 2004:22 -p 8004:80 tektutor/ansible-node-centos:latest
 ```
