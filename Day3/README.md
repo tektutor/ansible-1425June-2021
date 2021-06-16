@@ -25,3 +25,15 @@ docker build -t tektutor/ansible-node-ubuntu .
 docker images
 ```
 If the image was successfuly build, you will see an image with name "tektutor/ansible-node-ubuntu:latest"
+
+#### Building custom ansible node centos docker image
+```
+cd Day3/centos-ansible
+cp /home/jegan/.ssh/id_rsa.pub authorized_keys
+docker build -t tektutor/ansible-node-centos .
+```
+#### Check if the images is build successfully
+```
+docker images
+```
+If the image was successfuly build, you will see an image with name "tektutor/ansible-node-centos:latest"
