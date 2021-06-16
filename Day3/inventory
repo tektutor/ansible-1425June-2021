@@ -1,0 +1,15 @@
+[all]
+ubuntu1 ansible_port=2001 ansible_user=root ansible_host=localhost ansible_private_key_file=/home/jegan/.ssh/id_rsa
+ubuntu2 ansible_port=2002 ansible_user=root ansible_host=localhost ansible_private_key_file=/home/jegan/.ssh/id_rsa
+centos1 ansible_port=2003 ansible_user=root ansible_host=localhost ansible_private_key_file=/home/jegan/.ssh/id_rsa
+centos2 ansible_port=2004 ansible_user=root ansible_host=localhost ansible_private_key_file=/home/jegan/.ssh/id_rsa
+#centos_vm ansible_port=22 ansible_user=jegan ansible_password=root ansible_host=172.16.95.136 
+#aws_node ansible_user=ec2-user ansible_host=52.201.220.146 ansible_private_key_file=/home/jegan/.ssh/id_rsa
+
+[dev]
+ubuntu1
+ubuntu2
+
+[qa]
+centos1
+centos2
