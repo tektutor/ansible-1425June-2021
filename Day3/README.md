@@ -17,7 +17,7 @@ Hit Enter key 3 times to accept all defaults.
 #### Building custom ansible node ubuntu docker image
 ```
 cd Day3/ubuntu-ansible
-cp /home/jegan/.ssh/id_rsa.pub authorized_keys
+cp ~/.ssh/id_rsa.pub authorized_keys
 docker build -t tektutor/ansible-node-ubuntu .
 ```
 #### Check if the images is build successfully
@@ -29,7 +29,7 @@ If the image was successfuly build, you will see an image with name "tektutor/an
 #### Building custom ansible node centos docker image
 ```
 cd Day3/centos-ansible
-cp /home/jegan/.ssh/id_rsa.pub authorized_keys
+cp ~/.ssh/id_rsa.pub authorized_keys
 docker build -t tektutor/ansible-node-centos .
 ```
 #### Check if the images is build successfully
