@@ -151,7 +151,7 @@ ansible -i inventory ubuntu1 -m ping
 ```
 Ansible does the following when you run the above ad-hoc command
 1. SSH into ubuntu1 machine with the connection details mentioned in the inventory file
-2. Ansible creates tmp dirctory in Ansible Controller Machine (ACM) and on the Ansible Node
+2. Ansible creates tmp directory in Ansible Controller Machine (ACM) and on the Ansible Node
 3. Using sftp/scp(FTP tool), Ansible copies the ping.py from ACM tmp folder to Ansible Node tmp folder
 4. Ansible then executes the ping.py on the Ansible Nodes
 5. Captures the output of ping.py and Cleans up the tmp folder
