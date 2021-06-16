@@ -20,3 +20,8 @@ cd Day3/ubuntu-ansible
 cp /home/jegan/.ssh/id_rsa.pub authorized_keys
 docker build -t tektutor/ansible-node-ubuntu .
 ```
+#### Check if the images is build successfully
+```
+docker images
+```
+If the image was successfuly build, you will see an image with name "tektutor/ansible-node-ubuntu:latest"
