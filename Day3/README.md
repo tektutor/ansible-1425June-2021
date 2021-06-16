@@ -24,6 +24,25 @@ docker build -t tektutor/ansible-node-ubuntu .
 ```
 docker images
 ```
+The expected output is as shown below
+<pre>
+[jegan@localhost centos-ansible]$ docker images
+REPOSITORY                     TAG            IMAGE ID       CREATED          SIZE
+tektutor/ansible-node-centos   latest         3439a96e8dd7   13 minutes ago   250MB
+tektutor/ansible-node-ubuntu   latest         98001440d32d   23 minutes ago   220MB
+tektutor/maven                 2.0            f81e2e72206f   25 hours ago     283MB
+tektutor/maven                 1.0            727fddfe8301   25 hours ago     560MB
+wordpress                      latest         c2dd1984ad5b   12 days ago      551MB
+nginx                          1.20           993ef3592f66   3 weeks ago      133MB
+ubuntu                         16.04          9ff95a467e45   3 weeks ago      135MB
+ubuntu                         18.04          81bcf752ac3d   3 weeks ago      63.1MB
+mysql                          latest         c0cdc95609f1   4 weeks ago      556MB
+alpine                         latest         6dbb9cc54074   2 months ago     5.61MB
+centos                         8              300e315adb2f   6 months ago     209MB
+openjdk                        8-jdk-alpine   a3562aa0b991   2 years ago      105MB
+[jegan@localhost centos-ansible]$ 
+</pre>
+
 If the image was successfuly build, you will see an image with name "tektutor/ansible-node-ubuntu:latest"
 
 #### Building custom ansible node centos docker image
