@@ -12,6 +12,7 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 
 RUN mkdir -p /root/.ssh
 COPY authorized_keys /root/.ssh/authorized_keys
+RUN chmod -R 700 /root/.ssh 
 
 EXPOSE 22
 EXPOSE 80 
