@@ -24,7 +24,7 @@ docker build -t tektutor/ansible-node-ubuntu .
 ```
 docker images
 ```
-The expected output is as shown below
+The expected output is shown below
 <pre>
 [jegan@localhost centos-ansible]$ docker images
 REPOSITORY                     TAG            IMAGE ID       CREATED          SIZE
@@ -75,7 +75,7 @@ docker run -d --name centos2 --hostname centos2 -p 2004:22 -p 8004:80 tektutor/a
 ```
 docker ps
 ```
-The expected output is similar to this
+The expected output is shown below
 <pre>
 [jegan@localhost centos-ansible]$ docker ps
 CONTAINER ID   IMAGE                                 COMMAND               CREATED          STATUS          PORTS                                                                          NAMES
