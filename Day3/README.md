@@ -20,7 +20,13 @@ cd Day3/ubuntu-ansible
 cp ~/.ssh/id_rsa.pub authorized_keys
 docker build -t tektutor/ansible-node-ubuntu .
 ```
-#### Check if the images is build successfully
+#### Building custom ansible node centos docker image
+```
+cd Day3/centos-ansible
+cp ~/.ssh/id_rsa.pub authorized_keys
+docker build -t tektutor/ansible-node-centos .
+```
+#### Check if the images are built successfully
 ```
 docker images
 ```
@@ -43,19 +49,11 @@ openjdk                        8-jdk-alpine   a3562aa0b991   2 years ago      10
 [jegan@localhost centos-ansible]$ 
 </pre>
 
-If the image was successfuly build, you will see an image with name "tektutor/ansible-node-ubuntu:latest"
-
-#### Building custom ansible node centos docker image
+If the images were successfuly built, you will see the two images  
 ```
-cd Day3/centos-ansible
-cp ~/.ssh/id_rsa.pub authorized_keys
-docker build -t tektutor/ansible-node-centos .
+tektutor/ansible-node-ubuntu:latest
+tektutor/ansible-node-ubuntu:latest
 ```
-#### Check if the images is build successfully
-```
-docker images
-```
-If the image was successfuly build, you will see an image with name "tektutor/ansible-node-centos:latest"
 
 #### Clean up existing containers
 ```
