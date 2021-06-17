@@ -32,3 +32,11 @@ ansible-playbook -i inventory install-vim.yml -vvvv
 ```
 ansible-playbook -i inventory install-nginx-playbook.yml
 ```
+
+### Check if you are able to access the custom web page from 'ubuntu1', 'ubuntu2', 'centos1', 'centos2' ansible nodes
+```
+curl http://localhost:8001
+curl http://localhost:8002
+curl http://localhost:8003
+curl http://localhost:8004
+```
