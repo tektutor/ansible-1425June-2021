@@ -10,7 +10,7 @@ docker ps -a
 
 ### In case they are Exited, you need to start them
 ```
-docker start $(docker pa -aq)
+docker start $(docker ps -aq)
 ```
 
 ### Running the ping playbook
