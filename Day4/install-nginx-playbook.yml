@@ -1,0 +1,17 @@
+- name: This playbook will install nginx, configure document root folder and deploys custom web page into nginx web server.
+  hosts: dev
+
+  tasks:
+   - name: Install nginx in Ubuntu 
+     apt: name=nginx state=latest update_cache=yes
+
+  #- name: Start the nginx service
+  #  Due to a known in service module related to containers, the service module doesn't seem to start/restart the service
+  #  Hence we will use shell module instead
+  #  service: name=nginx state=started enabled=yes
+  #
+
+   - name: Start the nginx service
+     shell: /usr/sbin/nginx
+     ignore_errors: yes 
+     
