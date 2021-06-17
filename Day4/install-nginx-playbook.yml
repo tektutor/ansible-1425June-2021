@@ -1,6 +1,11 @@
 - name: This playbook will install nginx, configure document root folder and deploys custom web page into nginx web server.
   hosts: dev
 
+  vars:
+   - provisioner_tool: Docker
+   - conf_mgr_tool: Ansible
+   - greeting_msg: DevOps!
+
   tasks:
    - name: Install nginx in Ubuntu 
      apt: name=nginx state=latest update_cache=yes
@@ -10,8 +15,18 @@
   #  Hence we will use shell module instead
   #  service: name=nginx state=started enabled=yes
   #
-
-   - name: Start the nginx service
+   - name: Start the nginx service in Ubuntu
      shell: /usr/sbin/nginx
      ignore_errors: yes 
-     
+
+   - name: Create the custom document root folder
+     file: path=/var/html state=directory mode=0777
+
+   - name: Configure nginx document root folder in Ubuntu
+     copy: src=default dest=/etc/nginx/sites-available/default mode=0644 backup=yes
+
+   - name: Deploy a custom html page
+     template: src=index.html.j2 dest=/var/html/index.html mode=0644 
+
+   - name: Restart the nginx service in Ubuntu
+     shell: /etc/init.d/nginx restart 
