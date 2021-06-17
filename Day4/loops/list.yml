@@ -1,0 +1,15 @@
+- name: Demonstrates use of list variable and navigation of list items
+  hosts: localhost
+
+  vars:
+    - software_tools:
+         - vim
+         - tree
+         - tmux
+         - default-jdk
+         - maven
+  
+  tasks:
+    - name: Print the list items
+      debug: var=item
+      with_list: "{{software_tools}}"

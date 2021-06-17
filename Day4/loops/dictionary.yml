@@ -1,0 +1,13 @@
+- name: Demonstrates use of dictionary variable and how to navigate values
+  hosts: localhost
+
+  vars:
+    - project_env_settings:
+         java_home: /usr/lib/jdk8
+         m2_home: /usr/share/maven1
+
+  tasks:
+    - name: Print the dictionary items
+      debug: msg="{{item.key}} = {{item.value}}"
+      with_dict: "{{project_env_settings}}"
+
