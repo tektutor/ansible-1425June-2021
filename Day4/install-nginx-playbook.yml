@@ -1,4 +1,4 @@
-- name: This playbook will install nginx, configure document root folder and deploys custom web page into nginx web server.
+- name: This play will install nginx, configure document root folder and deploys custom web page into nginx web server on Ubuntu.
   hosts: dev
 
   vars:
@@ -16,8 +16,7 @@
   #  service: name=nginx state=started enabled=yes
   #
    - name: Start the nginx service in Ubuntu
-     shell: /usr/sbin/nginx
-     ignore_errors: yes 
+     shell: /etc/init.d/nginx start 
 
    - name: Create the custom document root folder
      file: path=/var/html state=directory mode=0777
@@ -30,3 +29,34 @@
 
    - name: Restart the nginx service in Ubuntu
      shell: /etc/init.d/nginx restart 
+
+- name: This play will install, configure and deploy custom web page into CentOS
+  hosts: qa
+
+  vars:
+   - provisioner_tool: Docker
+   - conf_mgr_tool: Ansible
+   - greeting_msg: DevOps!
+ 
+  tasks:
+    - name: Install Extra Packages for Enterprise Linux(EPEL) in CentOS
+      yum: name=epel-release state=latest 
+
+    - name: Install nginx web server in CentOS
+      yum: name=nginx state=latest update_cache=yes 
+
+    - name: Start the nginx service in CentOS
+      shell: /usr/sbin/nginx
+      ignore_errors: yes
+
+    - name: Create the custom document root folder
+      file: path=/var/html state=directory mode=0777
+
+    - name: Configure nginx document root folder in CentOS
+      copy: src=nginx.conf dest=/etc/nginx/nginx.conf mode=644 backup=yes 
+
+    - name: Deploy a custom html page
+      template: src=index.html.j2 dest=/var/html/index.html mode=0644
+
+    - name: Restart the nginx servce in CentOS
+      shell: /usr/sbin/nginx -s stop && /usr/sbin/nginx
