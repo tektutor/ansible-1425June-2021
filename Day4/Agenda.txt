@@ -1,18 +1,18 @@
 Today's Agenda
 ++++++++++++++
-1. Understanding Ansible Playbook structure
-2. Basics of YAML
-	- Do & Don'ts
-3. Practical use of Ansible configuration file
-4. Writing simple Ansible Playbooks and executing them
-5. Enabling verbosity to toubleshoot issues
-6. Understanding Playbook summary output, color coding, etc
+1. Understanding Ansible Playbook structure - Done
+2. Basics of YAML - Done
+	- Do & Don'ts - Done
+3. Practical use of Ansible configuration file - Done
+4. Writing simple Ansible Playbooks and executing them - Done
+5. Enabling verbosity to toubleshoot issues - Done
+6. Understanding Playbook summary output, color coding, etc - Done
 7. Ansible Loops
 	- List
 	- Dictionary
 	- Sequence
-8. Managing Facts
+8. Managing Facts - Done
 9. Understanding Variables
-	- Built-in
-	- Register
+	- Built-in - Done
+	- Register - Done
 

@@ -45,9 +45,14 @@
     - name: Install nginx web server in CentOS
       yum: name=nginx state=latest update_cache=yes 
 
+    - name: Check if nginx web page is accessible
+      shell: curl http://localhost:80
+      register: output
+
     - name: Start the nginx service in CentOS
+      when: output.rc != 0
       shell: /usr/sbin/nginx
-      ignore_errors: yes
+      #ignore_errors: yes
 
     - name: Create the custom document root folder
       file: path=/var/html state=directory mode=0777
