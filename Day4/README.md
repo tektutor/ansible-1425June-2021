@@ -55,7 +55,7 @@ If ansible.cfg file points to your inventory, then you may execute the ad-hoc an
 ```
 ansible all -m ping
 ansible centos1 -m ping
-ansible-playbook install-vim.yml
+ansible-playbook install-vim-playbook.yml
 ```
 
 ### Limitting the playbook execution to a spectific group or a particular machine without modifying playbook
