@@ -26,7 +26,7 @@ cd Day3/centos-ansible
 cp ~/.ssh/id_rsa.pub authorized_keys
 docker build -t tektutor/ansible-node-centos .
 ```
-#### Check if the images is build successfully
+#### Check if the images are built successfully
 ```
 docker images
 ```
