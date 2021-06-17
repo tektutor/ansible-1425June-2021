@@ -1,0 +1,14 @@
+- name: This playbook will install vim editor on all dev machines
+  hosts: dev 
+  tasks:
+    - name: Install vim editor
+      apt: name=vim state=latest update_cache=yes
+
+- name: This playbook will install vim editor on all qa machines 
+  hosts: qa 
+  tasks:
+    - name: Install Extra Packages for Enterprise Linux (EPEL) 
+      yum: name=epel-release state=latest
+
+    - name: Install vim editor
+      yum: name=vim state=latest update_cache=yes

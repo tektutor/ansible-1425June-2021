@@ -1,6 +1,9 @@
 FROM centos:8
 MAINTAINER Jeganathan Swaminathan <jegan@tektutor.org> 
 
+#ENV http_proxy http://10.20.30.40:80
+#ENV https_proxy http://10.20.30.40:80
+
 RUN yum install -y openssh-server openssh-clients 
 RUN ln -s -f /usr/libexec/platform-python3.6 /usr/bin/python 
 

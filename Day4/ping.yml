@@ -1,0 +1,12 @@
+- name: First play
+  hosts: dev
+  gather_facts: no
+  tasks:
+     - name: Ping the the dev machines
+       ping:
+
+- name: Second play
+  hosts: qa 
+  tasks:
+     - name: Ping the the dev machines
+       ping:
