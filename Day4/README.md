@@ -40,3 +40,4 @@ curl http://localhost:8002
 curl http://localhost:8003
 curl http://localhost:8004
 ```
+Notice, the hostname variable gives different values depending on the ansible node.
