@@ -1,3 +1,18 @@
+### Make sure your containers are in running state
+```
+docker ps
+```
+
+### In case your container are in Exited state, you may see them with below command
+```
+docker ps -a
+```
+
+### In case they are Exited, you need to start them
+```
+docker start $(docker pa -aq)
+```
+
 ### Running the ping playbook
 ```
 ansible-playbook -i inventory ping.yml
