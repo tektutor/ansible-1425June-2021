@@ -12,3 +12,8 @@ ansible-playbook -i inventory install-vim.yml
 ```
 ansible-playbook -i inventory install-vim.yml -vvvv
 ```
+
+### Running the install nginx playbook
+```
+ansible-playbook -i inventory install-nginx-playbook.yml
+```
