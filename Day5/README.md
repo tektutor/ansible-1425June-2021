@@ -1,10 +1,10 @@
 ### Running the playbook
-By default the existing containers will not be deleted
+By default the existing containers whose name starts with ubuntu* or centos* will not be deleted
 ```
 ansible-playbook provision-docker-containers.yml
 ```
 
-If you wish to delete the existing containers, you may do so as shown below
+If you wish to delete the existing containers with names either starting with ubuntu* or centos*
 ```
 ansible-playbook provision-docker-containers.yml -e delete_containers=yes
 ```
