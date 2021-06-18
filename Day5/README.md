@@ -4,7 +4,7 @@ By default the existing containers whose name starts with ubuntu* or centos* wil
 ansible-playbook provision-docker-containers.yml
 ```
 
-If you wish to delete the existing containers with names either starting with ubuntu* or centos*
+If you wish to delete the existing containers with names either starting with ubuntu* or centos* and start provisioning
 ```
 ansible-playbook provision-docker-containers.yml -e delete_containers=yes
 ```
