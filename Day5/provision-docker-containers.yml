@@ -11,7 +11,7 @@
 
     - name: Delete ubuntu containers
       when: ( delete_containers == "yes" )
-      shell: docker rm -f $(docker ps -aq --filter "name=ubuntu*")
+      shell: docker rm -f $(docker ps -aq --filter "name=ubuntu*|centos*")
       ignore_errors: yes
 
     - name: Create ubuntu containers
