@@ -63,3 +63,11 @@ ansible-playbook install-vim-playbook.yml
 ansible-playbook install-nginx-playbook.yml --limit qa
 ansible-playbook install-nginx-playbook.yml --limit centos1
 ```
+
+### Executing the loops playboook
+```
+ansible-playbook list.yml
+ansible-playbook dictionary.yml
+ansible-playbook sequence.yml
+
+```
