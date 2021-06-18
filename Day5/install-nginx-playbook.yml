@@ -1,0 +1,12 @@
+- name: This play will install nginx, configure document root folder and deploys custom web page into nginx web server on Ubuntu and CentOS.
+  hosts: all 
+
+  vars_files:
+   - nginx-conf-file
+
+  tasks:
+   - include: "install-nginx-{{ansible_distribution|lower}}.yml"
+   - include: "start-nginx-{{ansible_distribution|lower}}.yml"
+   - include: "configure-nginx-{{ansible_distribution|lower}}.yml"
+   - include: "restart-nginx-{{ansible_distribution|lower}}.yml"
+   - include: common-nginx-tasks.yml

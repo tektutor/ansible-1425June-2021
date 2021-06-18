@@ -1,0 +1,8 @@
+- name: Check if nginx web page is accessible in CentOS
+  shell: curl http://localhost:80
+  register: output
+  ignore_errors: yes
+
+- name: Start the nginx service in CentOS
+  when: output.rc != 0
+  shell: /usr/sbin/nginx

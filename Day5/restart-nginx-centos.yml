@@ -1,0 +1,2 @@
+- name: Restart the nginx servce in CentOS
+  shell: /usr/sbin/nginx -s stop && /usr/sbin/nginx
