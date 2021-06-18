@@ -1,0 +1,50 @@
+- name: Demonstrates building docker images via Ansible playbook
+  hosts: localhost
+  vars:
+    delete_images: no
+
+  tasks:
+     - name: Check if ubuntu or centos containers are running
+       shell: docker ps -aq --filter "name=ubuntu*|centos*" | wc -w
+       register: output 
+       tags:
+         - debug
+
+     - debug: var=output
+       tags:
+         - debug
+
+     - name: Dispose containers with name patterns ubuntu* and centos*
+       shell: docker rm -f $(docker ps -aq --filter "name=ubuntu*|centos*")
+       when: ( delete_images == "yes" and output.stdout != "0")
+       tags:
+         - debug
+
+     - name: Cleanup the existing tektutor images
+       shell: docker rmi tektutor/ansible-node-ubuntu:latest && docker rmi tektutor/ansible-node-centos:latest 
+       when: ( delete_images == "yes" )
+       ignore_errors: yes
+       tags:
+         - debug
+
+     - name: Build ubuntu docker images
+       docker_image:
+           docker_host: tcp://localhost:4243
+           name: "tektutor/ansible-node-ubuntu:latest"
+           state: present 
+           source: build  
+           build:
+             dockerfile: UbuntuDockerfile
+             path: .
+             pull: yes
+
+     - name: Build centos docker images
+       docker_image:
+           docker_host: tcp://localhost:4243
+           name: "tektutor/ansible-node-centos:latest"
+           state: present 
+           source: build  
+           build:
+             dockerfile: CentOSDockerfile
+             path: .
+             pull: yes
