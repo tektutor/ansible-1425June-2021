@@ -1,0 +1,39 @@
+- name: This playbook demonstrates provisioning containers using Ansible Playbook
+  hosts: localhost
+
+  vars:
+    - delete_containers: no 
+    - second_var: 0
+  
+
+  tasks: 
+    - debug: msg="delete_containers={{delete_containers}}; second_variable={{second_var}}"
+
+    - name: Delete ubuntu containers
+      when: ( delete_containers == "yes" )
+      shell: docker rm -f $(docker ps -aq --filter "name=ubuntu*")
+      ignore_errors: yes
+
+    - name: Create ubuntu containers
+      docker_container:
+         docker_host: "tcp://localhost:4243"
+         image: "tektutor/ansible-node-ubuntu:latest"
+         name: "ubuntu-{{item}}"
+         hostname: "ubuntu-{{item}}"
+         state: started 
+         ports:
+           - "8{{item}}:80"
+           - "2{{item}}:22"
+      with_sequence: start=1 end=2 format="%03d"
+
+    - name: Create centos containers
+      docker_container:
+         docker_host: "tcp://localhost:4243"
+         image: "tektutor/ansible-node-centos:latest"
+         name: "centos-{{item}}"
+         hostname: "centos-{{item}}"
+         state: started 
+         ports:
+           - "9{{item}}:80"
+           - "3{{item}}:22"
+      with_sequence: start=1 end=2 format="%03d"
