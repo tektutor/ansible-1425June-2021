@@ -9,10 +9,21 @@
 
    - debug: var=output
 
-   - name: Print Git config user.email
+   - name: Set Git config user.email
      git_config:
        name: user.email
        value: "someemail@gmail.com"
+       state: present
+       scope: local
+       repo: .
+     register: output
+
+   - debug: var=output
+
+   - name: Set Git config user.name
+     git_config:
+       name: user.name
+       value: "Michael Deehan"
        state: present
        scope: local
        repo: .
