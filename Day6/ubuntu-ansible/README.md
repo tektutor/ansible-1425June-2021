@@ -1,4 +1,6 @@
 ### Running the playbook
+This expects the inventory file with ansible_become_user=tektutor ansible_become_password=tektutor and playbook with become: yes
+
 ```
 ansible-playbook sudo-elevation-playbook.yml
 ```
