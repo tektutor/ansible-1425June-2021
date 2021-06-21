@@ -1,0 +1,29 @@
+- name: Demonstrates how to inspect container's using ansible playbook
+  hosts: localhost
+
+  vars_files:
+    - docker-connection-details
+    - config-file
+
+  tasks:
+     - name: Retrieve docker connection details
+       debug: var=item.value
+       with_dict: "{{connection_details}}" 
+       register: docker_host
+
+     - debug: var=docker_host
+     - debug: var=docker_host.results[0].item.value
+       
+     - name: Inspect container
+       docker_container_info:
+           docker_host: "{{docker_host.results[0].item.value}}"
+           name: "{{item}}" 
+       register: status 
+       with_items: "{{container_names}}"
+
+     - debug: msg="No of contianers is {{container_names|length}}"
+     - debug: msg="Container {{item}} {{'exists' if status.results[container_index].exists else 'not exists.'}}"
+       with_items: 
+           - "{{container_names}}"
+       loop_control:
+         index_var: container_index

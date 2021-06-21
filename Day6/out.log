@@ -1,0 +1,4 @@
+
+PLAY [Demonstrates how to inspect container's using ansible playbook] **********
+
+TASK [Gathering Facts] *********************************************************
