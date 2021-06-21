@@ -1,0 +1,8 @@
+- name: Demonstrates git clone using ansible module git
+  hosts: localhost 
+  tasks:
+    - name: Clone the Tektutor Ansible GitHub repo
+      git:
+        repo: https://github.com/tektutor/ansible-1425june-2021.git
+        dest: /home/jegan/clonedemo
+
