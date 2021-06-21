@@ -1,5 +1,6 @@
 ### Create a local git repo
 ```
+cd Day6/GitHubConfig
 git init
 ```
 
@@ -28,4 +29,9 @@ git status
 ### Printing and setting git config details using ansible playbook
 ```
 ansible-playbook git-config-playbook.yml
+```
+
+### Verify the git config configured by playbook
+```
+git config -l
 ```
