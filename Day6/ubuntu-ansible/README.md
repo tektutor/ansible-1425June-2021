@@ -9,7 +9,7 @@ In this case, you just need to mention the ansible_become_user and ansible_becom
 ansible-playbook sudo-elevation-playbook.yml --ask-become-pass
 ```
 ### Running the playbook
-In this case, you don't need to menttion become: yes in the playbook.  You don't need to mention ansible_become_user and ansible_become_password as the details are supplied in the command line.
+In this case, you don't need to mention become: yes in the playbook.  You don't need to mention ansible_become_user and ansible_become_password as the details are supplied in the command line.
 ```
 ansible-playbook sudo-elevation-playbook.yml -b --become-user root --ask-become-pass
 ```
