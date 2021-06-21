@@ -14,3 +14,11 @@ ansible-playbook provision-docker-containers.yml -e delete_containers=yes
 ansible-playbook provision-docker-containers.yml -e delete_containers=yes -e second_var=1
 ansible-playbook provision-docker-containers.yml -e "delete_container=yes second_var=1"
 ```
+
+### Building docker images via ansible playbook
+By default it won't delete the existing containers and images.
+```
+ansible-playbook build-docker-images
+ansible-playbook build-docker-images -e delete_images=yes
+ansible-playbook build-docker-images -e delete_images=no
+```
