@@ -1,0 +1,11 @@
+- name: Demonstrates handlers and notifiers
+  hosts: dev 
+  tasks:
+    - name: Install nginx
+      apt: name=nginx state=latest update_cache=yes
+      notify:
+        - Start the nginx
+
+  handlers:
+    - name: Start the nginx
+      shell: /etc/init.d/nginx start

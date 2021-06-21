@@ -3,4 +3,3 @@
   tasks:
     - name: Install vim editor
       apt: name=vim state=latest update_cache=yes
-      become: yes
