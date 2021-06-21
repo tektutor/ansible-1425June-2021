@@ -1,0 +1,19 @@
+- name: Demonstratates use of git_config ansible module
+  hosts: localhost
+  tasks:
+   - name: Print Git all config details of TekTutor GitHub Repo of this training
+     git_config:
+       list_all: yes
+       repo: https://github.com/tektutor/ansible-1425June-2021.git
+     register: output
+
+   - debug: var=output
+
+   - name: Print Git config user.email
+     git_config:
+       name: user.email
+       scope: global
+       repo: https://github.com/tektutor/ansible-1425June-2021.git
+     register: output
+
+   - debug: var=output
