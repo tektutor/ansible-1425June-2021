@@ -4,6 +4,7 @@
    - name: Print Git all config details of TekTutor GitHub Repo of this training
      git_config:
        list_all: yes
+       scope: global
        repo: https://github.com/tektutor/ansible-1425June-2021.git
      register: output
 

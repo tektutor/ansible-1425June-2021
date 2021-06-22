@@ -13,6 +13,7 @@
 
      - debug: var=docker_host
      - debug: var=docker_host.results[0].item.value
+
        
      - name: Inspect container
        docker_container_info:
@@ -22,7 +23,7 @@
        with_items: "{{container_names}}"
 
      - debug: msg="No of containers present in list are {{container_names|length}}"
-     - debug: msg="Container {{item}} {{'exists' if status.results[container_index].exists else 'not exists.'}}"
+     - debug: msg="Container {{item}} {{'exists' if status.results[container_index].exists else 'not exists'}}"
        with_items: 
            - "{{container_names}}"
        loop_control:

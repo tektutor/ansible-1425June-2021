@@ -1,0 +1,7 @@
+- name: Demonstrates using custom ansible module
+  hosts: localhost
+ 
+  tasks:
+    - name: Invoke custom module
+      print_msg:  msg1="First message" msg2="Second message"
+
