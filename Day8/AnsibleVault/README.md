@@ -33,7 +33,6 @@ ansible-vault decrypt credentials.yml
 ansible-vault edit credentials.yml
 ```
 
-
 ### Viewing your vault protected file
 ```
 ansible-vault view credentials.yml
@@ -47,4 +46,19 @@ ansible-playbook playbook.yml
 ### In case you don't prefer storing the vault password in a file
 ```
 ansible-playbook playbook.yml --ask-vault-pass
+```
+
+
+### The below playbook demonstrates securing ansible_become_user and ansible_become_password with ansible-vault
+```
+ansible-playbook install-vim.yml 
+```
+The credentials.yml file look as shown below
+```
+login_credentials:
+   user: ansible
+   password: tower@123
+
+ansible_become_user: root
+ansible_become_password: tektutor 
 ```
