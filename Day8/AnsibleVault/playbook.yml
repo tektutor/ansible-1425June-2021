@@ -11,3 +11,5 @@
 
     - name: Access login credentials with the help of key
       debug: msg="Username => {{login_credentials["user"]}}; Password => {{login_credentials["password"]}}"
+
+    - debug: msg="{{login_credentials["ansible_become_user"]}} and {{login_credentials["ansible_become_password"]}}"
