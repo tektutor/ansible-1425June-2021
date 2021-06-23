@@ -1,0 +1,9 @@
+- name: Configure apache web server in Ubuntu
+  copy: src=apache2.conf dest=/etc/apache2/apache2.conf
+  notify:
+    - Restart the apache web server in Ubuntu
+
+- name: Grant permission to custom document folder
+  copy: src=000-default.conf dest=/etc/apache2/sites-available/000-default.conf
+  notify:
+    - Restart the apache web server in Ubuntu

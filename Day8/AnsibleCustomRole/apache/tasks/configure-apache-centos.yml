@@ -1,0 +1,4 @@
+- name: Configure apache web server in CentOS
+  copy: src=httpd.conf dest=/etc/httpd/conf/httpd.conf
+  notify:
+   - Restart the apache web server in CentOS

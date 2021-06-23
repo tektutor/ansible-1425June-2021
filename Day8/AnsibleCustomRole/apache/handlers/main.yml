@@ -1,0 +1,13 @@
+---
+# handlers file for apache
+- name: Start the apache web server in Ubuntu
+  shell: /etc/init.d/apache2 start 
+
+- name: Start the apache web server in CentOS 
+  shell: /usr/sbin/httpd -k start 
+
+- name: Restart the apache web server in Ubuntu
+  shell: /etc/init.d/apache2 restart 
+
+- name: Restart the apache web server in CentOS 
+  shell: /usr/sbin/httpd -k restart 
