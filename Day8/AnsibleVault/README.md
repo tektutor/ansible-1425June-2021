@@ -44,7 +44,7 @@ ansible-vault view credentials.yml
 ansible-playbook playbook.yml
 ```
 
-### In case you dont' prefer storing the vault password in a file
+### In case you don't prefer storing the vault password in a file
 ```
 ansible-playbook playbook.yml --ask-vault-pass
 ```
