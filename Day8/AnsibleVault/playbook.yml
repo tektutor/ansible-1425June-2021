@@ -1,0 +1,13 @@
+- name: Demonstrates how you can protect sensitive login credentials with ansible vault.
+  hosts: all 
+
+  vars_files:
+    - credentials.yml
+
+  tasks:
+    - name: Access login credentials
+      debug: msg="{{ item.value }}"
+      with_dict: "{{login_credentials}}"
+
+    - name: Access login credentials with the help of key
+      debug: msg="Username => {{login_credentials["user"]}}; Password => {{login_credentials["password"]}}"
