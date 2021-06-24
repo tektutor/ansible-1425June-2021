@@ -42,7 +42,8 @@ At that time of launching Jenkins first time, make sure you select "Install Sugg
 you have create an user, don't skip and continue as admin.
 
 ### Installing Jenkins Plugins
-Navigate Menu --> Manage Jenkins --> Manage Plugins --> Available
+Navigate Menu --> Manage Jenkins --> Manage Plugins --> Available Tab
+Install the below Plugins
 1. Docker
 2. Maven Integration
 3. Ansible
