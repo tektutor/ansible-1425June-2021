@@ -16,7 +16,6 @@ M2_HOME path is /home/jegan/Downloads/apache-maven-3.8.1
 ### Find the JAVA_HOME path
 ```
 which javac
-ls -l 
 ls -l /usr/bin/javac
 ls -l /etc/alternatives/javac
 ```
@@ -39,8 +38,8 @@ cd Downloads
 wget https://get.jenkins.io/war-stable/2.289.1/jenkins.war
 java -jar ./jenkins.war
 ```
-At that time of launching Jenkins first time, make sure you selected "Install Suggested Plugins". Also make sure
-you have created a user, don't skip and continue as admin.
+At that time of launching Jenkins first time, make sure you select "Install Suggested Plugins". Also make sure
+you have create an user, don't skip and continue as admin.
 
 ### Installing Jenkins Plugins
 Navigate Menu --> Manage Jenkins --> Manage Plugins --> Available
@@ -51,3 +50,4 @@ Navigate Menu --> Manage Jenkins --> Manage Plugins --> Available
 5. Build Pipeline
 
 Install and Restart Jenkins.
+You may access Jenkins dashboard from your favourite web browser at http://localhost:8080
