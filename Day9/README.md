@@ -39,7 +39,7 @@ wget https://get.jenkins.io/war-stable/2.289.1/jenkins.war
 java -jar ./jenkins.war
 ```
 At that time of launching Jenkins first time, make sure you select "Install Suggested Plugins". Also make sure
-you have create an user, don't skip and continue as admin.
+you to create an user, don't skip and continue as admin.
 
 ### Installing Jenkins Plugins
 Navigate Menu --> Manage Jenkins --> Manage Plugins --> Available Tab
