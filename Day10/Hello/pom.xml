@@ -22,7 +22,7 @@
 	<distributionManagement>
 		<repository>
 			<id>artifactory</id>
-			<url>http://172.16.95.144:8082/artifactory/tektutor/</url>
+			<url>http://172.16.95.144:8081/artifactory/tektutor/</url>
 		</repository>
 	</distributionManagement>
 </project>
