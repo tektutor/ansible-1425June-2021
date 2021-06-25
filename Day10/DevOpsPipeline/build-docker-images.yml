@@ -1,11 +1,11 @@
 - name: Demonstrates building docker image via Ansible playbook
   hosts: localhost
   vars:
-    delete_images: no
+    delete_images: yes 
 
   tasks:
      - name: Check if ubuntu or centos containers are running
-       shell: docker ps -aq --filter "name=ubuntu*" | wc -w
+       shell: docker ps -aq --filter "name=docker-jenkins-slave*" | wc -w
        register: output 
        tags:
          - debug
@@ -15,7 +15,7 @@
          - debug
 
      - name: Dispose containers with name patterns ubuntu*
-       shell: docker rm -f $(docker ps -aq --filter "name=ubuntu*")
+       shell: docker rm -f $(docker ps -aq --filter "name=docker-jenkins-slave*")
        when: ( delete_images == "yes" and output.stdout != "0")
        tags:
          - debug
