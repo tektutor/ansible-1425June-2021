@@ -1,4 +1,4 @@
-## Setting the Lab environment
+## Setting up the Lab environment
 The assumption is that you already have a CentOS 8.3.x 64-bit OS.
 
 ### Installing Docker Community Edition
