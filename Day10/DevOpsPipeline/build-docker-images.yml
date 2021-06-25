@@ -21,8 +21,7 @@
          - debug
 
      - name: Cleanup the existing tektutor images
-       shell: docker rmi tektutor/jenkins-node-ubuntu:latest
-       when: ( delete_images == "yes" )
+       shell: docker rmi -f tektutor/jenkins-node-ubuntu:latest
        ignore_errors: yes
        tags:
          - debug
